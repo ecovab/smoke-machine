@@ -94,13 +94,7 @@ export default function Hero() {
           className="order-1 h-[380px] w-full sm:h-[460px] lg:order-2 lg:h-[620px]"
           aria-hidden="true"
         >
-          {!prefersReducedMotion ? (
-            <HeroScene />
-          ) : (
-            <div className="relative flex h-full w-full items-center justify-center">
-              <div className="h-56 w-32 rounded-[2.5rem] border border-white/10 bg-gradient-to-b from-graphite-800 to-graphite-950 shadow-[0_0_80px_rgba(46,230,255,0.25)]" />
-            </div>
-          )}
+          <HeroScene reducedMotion={!!prefersReducedMotion} />
         </div>
       </div>
 

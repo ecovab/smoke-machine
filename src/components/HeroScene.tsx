@@ -5,17 +5,21 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, RoundedBox, Sparkles } from "@react-three/drei";
 import * as THREE from "three";
 
-function Device() {
+function Device({ reducedMotion }: { reducedMotion: boolean }) {
   const groupRef = useRef<THREE.Group>(null);
 
   useFrame((state) => {
-    if (!groupRef.current) return;
+    if (!groupRef.current || reducedMotion) return;
     groupRef.current.rotation.y = state.clock.elapsedTime * 0.22;
   });
 
   return (
-    <Float speed={1.4} rotationIntensity={0.35} floatIntensity={0.9}>
-      <group ref={groupRef}>
+    <Float
+      speed={reducedMotion ? 0 : 1.4}
+      rotationIntensity={reducedMotion ? 0 : 0.35}
+      floatIntensity={reducedMotion ? 0 : 0.9}
+    >
+      <group ref={groupRef} rotation={[0, reducedMotion ? -0.5 : 0, 0]}>
         {/* Main body (mod) */}
         <RoundedBox args={[0.72, 1.7, 0.34]} radius={0.13} smoothness={6} position={[0, -0.55, 0]}>
           <meshPhysicalMaterial
@@ -145,12 +149,17 @@ function Device() {
   );
 }
 
-export default function HeroScene() {
+export default function HeroScene({
+  reducedMotion = false,
+}: {
+  reducedMotion?: boolean;
+}) {
   return (
     <Canvas
       dpr={[1, 1.75]}
       camera={{ position: [0, 0.2, 6.2], fov: 32 }}
       gl={{ antialias: true, alpha: true, powerPreference: "low-power" }}
+      frameloop={reducedMotion ? "demand" : "always"}
     >
       <Suspense fallback={null}>
         <ambientLight intensity={0.35} />
@@ -160,13 +169,13 @@ export default function HeroScene() {
         <pointLight position={[0, -3, -2]} intensity={18} color="#ff4f9e" />
         <pointLight position={[-1.5, 1, 2.5]} intensity={12} color="#ffffff" />
 
-        <Device />
+        <Device reducedMotion={reducedMotion} />
 
         <Sparkles
           count={70}
           scale={[4, 5, 3]}
           size={2.4}
-          speed={0.25}
+          speed={reducedMotion ? 0 : 0.25}
           opacity={0.5}
           color="#8fb9c4"
         />
