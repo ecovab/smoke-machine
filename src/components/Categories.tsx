@@ -1,5 +1,5 @@
 import Reveal from "@/components/Reveal";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ParallaxImage from "@/components/ParallaxImage";
 import { categories } from "@/lib/products";
 
 export default function Categories() {
@@ -26,7 +26,7 @@ export default function Categories() {
               href={`#${category.slug}`}
               className="card-hover block overflow-hidden rounded-lg border border-line bg-panel"
             >
-              <ImagePlaceholder
+              <ParallaxImage
                 label={`${category.name} category`}
                 className="aspect-square w-full"
               />

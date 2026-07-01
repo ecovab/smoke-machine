@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import Parallax from "@/components/Parallax";
 import { siteConfig } from "@/lib/site-config";
 import { mapsDirectionsUrl, mapsEmbedUrl } from "@/lib/maps";
 import { whatsappUrl } from "@/lib/contact";
@@ -22,15 +23,17 @@ export default function Location() {
       </p>
 
       <div className="mt-8 grid grid-cols-1 overflow-hidden rounded-lg border border-line lg:grid-cols-2">
-        <Reveal className="h-72 lg:h-auto">
-          <iframe
-            title={`Map showing ${siteConfig.name} at ${siteConfig.business.mapsQuery}`}
-            src={mapsEmbedUrl(siteConfig.business.mapsQuery)}
-            className="h-full w-full"
-            style={{ border: 0, minHeight: "18rem" }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+        <Reveal className="relative h-72 overflow-hidden lg:h-auto">
+          <Parallax speed={0.1} className="absolute inset-x-0 -top-[6%] h-[112%]">
+            <iframe
+              title={`Map showing ${siteConfig.name} at ${siteConfig.business.mapsQuery}`}
+              src={mapsEmbedUrl(siteConfig.business.mapsQuery)}
+              className="h-full w-full"
+              style={{ border: 0, minHeight: "18rem" }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </Parallax>
         </Reveal>
 
         <Reveal delay={0.1}>

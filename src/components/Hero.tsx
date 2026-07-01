@@ -1,4 +1,5 @@
 import { whatsappUrl } from "@/lib/contact";
+import Parallax from "@/components/Parallax";
 
 export default function Hero() {
   return (
@@ -7,10 +8,15 @@ export default function Hero() {
       aria-label="Smoke Machine Vape Shop"
       className="relative overflow-hidden border-b border-line bg-mist"
     >
-      <div
-        className="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-accent-soft blur-3xl"
-        aria-hidden="true"
-      />
+      <Parallax
+        speed={0.3}
+        className="pointer-events-none absolute inset-0"
+      >
+        <div
+          className="absolute right-0 top-0 h-72 w-72 rounded-full bg-accent-soft blur-3xl"
+          aria-hidden="true"
+        />
+      </Parallax>
 
       <div className="relative mx-auto max-w-5xl px-6 py-20 text-center sm:px-8 sm:py-28">
         <h1 className="text-4xl font-semibold tracking-tight text-ink sm:text-5xl">

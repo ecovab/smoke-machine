@@ -16,7 +16,7 @@ export default function OgImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "#faf9f7",
+          background: "#17181b",
           position: "relative",
         }}
       >
@@ -29,7 +29,7 @@ export default function OgImage() {
             height: 480,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(47,95,216,0.14) 0%, rgba(47,95,216,0) 70%)",
+              "radial-gradient(circle, rgba(91,141,239,0.2) 0%, rgba(91,141,239,0) 70%)",
             display: "flex",
           }}
         />
@@ -37,7 +37,7 @@ export default function OgImage() {
           style={{
             fontSize: 22,
             letterSpacing: 6,
-            color: "#2f5fd8",
+            color: "#5b8def",
             fontWeight: 600,
             marginBottom: 20,
             display: "flex",
@@ -49,7 +49,7 @@ export default function OgImage() {
           style={{
             fontSize: 76,
             fontWeight: 700,
-            color: "#26241f",
+            color: "#f2f1ee",
             letterSpacing: -1,
             textAlign: "center",
             display: "flex",
@@ -60,7 +60,7 @@ export default function OgImage() {
         <div
           style={{
             fontSize: 30,
-            color: "#605c53",
+            color: "#a6a49e",
             marginTop: 24,
             display: "flex",
           }}

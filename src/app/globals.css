@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --color-paper: #faf9f7;
-  --color-panel: #ffffff;
-  --color-mist: #f1efec;
-  --color-line: #e4e1db;
-  --color-ink: #26241f;
-  --color-ink-soft: #605c53;
-  --color-ink-faint: #8b867a;
-  --color-accent: #2f5fd8;
-  --color-accent-soft: #eaf0fd;
-  --color-accent-dark: #24499f;
+  --color-paper: #17181b;
+  --color-panel: #1e2023;
+  --color-mist: #1a1c1f;
+  --color-line: rgba(255, 255, 255, 0.09);
+  --color-ink: #f2f1ee;
+  --color-ink-soft: #a6a49e;
+  --color-ink-faint: #726f68;
+  --color-accent: #5b8def;
+  --color-accent-soft: rgba(91, 141, 239, 0.16);
+  --color-accent-dark: #4270cc;
 }
 
 @theme inline {
@@ -29,8 +29,7 @@
 
 html {
   background: var(--color-paper);
-  color-scheme: light;
-  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
@@ -59,14 +58,14 @@ body {
 
 .card-hover:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(38, 36, 31, 0.08);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
   border-color: var(--color-accent);
 }
 
 /* Neutral stand-in for real product/interior photography.
    Swap any element using this class for a next/image once real photos exist. */
 .image-placeholder {
-  background: linear-gradient(150deg, var(--color-mist) 0%, #e8e5df 100%);
+  background: linear-gradient(150deg, #24262a 0%, #16171a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
