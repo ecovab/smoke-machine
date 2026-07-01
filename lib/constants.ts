@@ -1,7 +1,6 @@
 export const BRAND = {
   name: "The Smoke Machine Express",
   shortName: "Smoke Machine Express",
-  tagline: "A premium vapour experience, rooted in Paarl.",
   location: {
     city: "Paarl",
     province: "Western Cape",
