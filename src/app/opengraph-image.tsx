@@ -17,7 +17,7 @@ export default function OgImage() {
           alignItems: "center",
           justifyContent: "center",
           background:
-            "radial-gradient(circle at 30% 20%, #10222b 0%, #030304 55%, #030304 100%)",
+            "radial-gradient(circle at 30% 15%, #2a2016 0%, #0b0906 55%, #0b0906 100%)",
           position: "relative",
         }}
       >
@@ -30,17 +30,17 @@ export default function OgImage() {
             height: 480,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(163,91,255,0.55) 0%, rgba(163,91,255,0) 70%)",
+              "radial-gradient(circle, rgba(200,162,92,0.28) 0%, rgba(200,162,92,0) 70%)",
             display: "flex",
           }}
         />
         <div
           style={{
-            fontSize: 26,
+            fontSize: 24,
             letterSpacing: 10,
-            color: "#2ee6ff",
-            fontWeight: 600,
-            marginBottom: 18,
+            color: "#c8a25c",
+            fontWeight: 500,
+            marginBottom: 20,
             display: "flex",
           }}
         >
@@ -48,21 +48,21 @@ export default function OgImage() {
         </div>
         <div
           style={{
-            fontSize: 84,
-            fontWeight: 700,
-            color: "#f5f7f8",
-            letterSpacing: 2,
+            fontSize: 80,
+            fontWeight: 500,
+            color: "#f2e9d8",
+            letterSpacing: 1,
             textAlign: "center",
             display: "flex",
           }}
         >
-          SMOKE MACHINE EXPRESS
+          Smoke Machine Express
         </div>
         <div
           style={{
-            fontSize: 32,
-            color: "#a4adb8",
-            marginTop: 22,
+            fontSize: 30,
+            color: "#b7a996",
+            marginTop: 24,
             display: "flex",
           }}
         >

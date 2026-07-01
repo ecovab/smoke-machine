@@ -2,8 +2,9 @@ export const siteConfig = {
   name: "Smoke Machine Express",
   shortName: "Smoke Machine Express",
   tagline: "Paarl's Premium Vape Destination",
+  subTagline: "A considered space for vaping done properly.",
   description:
-    "Smoke Machine Express is Paarl's premium vape destination at Centrepoint, Western Cape. Leading brands including Airscream, OXVA and Vaporesso, expert advice, and a premium in-store experience. Open daily 09:00-22:00.",
+    "Smoke Machine Express is Paarl's premium vape destination at Centrepoint, Western Cape — a considered space carrying Airscream, OXVA and Vaporesso, with expert guidance and unhurried, attentive service. Open daily 09:00-22:00.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.smokemachineexpress.co.za",
   locale: "en_ZA",
 

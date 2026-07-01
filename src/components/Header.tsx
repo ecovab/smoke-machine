@@ -6,7 +6,7 @@ import { mapsDirectionsUrl } from "@/lib/maps";
 
 const NAV_LINKS = [
   { href: "#about", label: "About" },
-  { href: "#what-we-do", label: "What We Do" },
+  { href: "#craft", label: "Craft" },
   { href: "#brands", label: "Brands" },
   { href: "#location", label: "Location" },
 ];
@@ -26,29 +26,29 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
-        scrolled ? "glass-panel border-b border-white/10" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-700 ${
+        scrolled ? "glass-panel border-b border-hairline" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
         <a
           href="#top"
-          className="font-display text-sm font-semibold tracking-[0.28em] text-fog sm:text-base"
+          className="font-display text-sm tracking-[0.3em] text-parchment sm:text-base"
         >
-          SMOKE MACHINE <span className="text-neon-cyan">EXPRESS</span>
+          SMOKE MACHINE <span className="italic text-brass">Express</span>
         </a>
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-8 md:flex"
+          className="hidden items-center gap-9 md:flex"
         >
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm tracking-wide text-mist transition-colors hover:text-neon-cyan"
+              className="text-xs tracking-[0.15em] text-stone transition-colors duration-500 hover:text-brass"
             >
-              {link.label}
+              {link.label.toUpperCase()}
             </a>
           ))}
         </nav>
@@ -57,9 +57,9 @@ export default function Header() {
           href={mapsDirectionsUrl(siteConfig.business.mapsQuery)}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden rounded-full border border-neon-cyan/40 bg-neon-cyan/10 px-5 py-2 text-sm font-medium text-neon-cyan transition-colors hover:bg-neon-cyan/20 md:inline-flex"
+          className="hidden rounded-sm border border-hairline px-5 py-2 text-xs tracking-[0.15em] text-parchment transition-colors duration-500 hover:border-brass hover:text-brass md:inline-flex"
         >
-          Get Directions
+          GET DIRECTIONS
         </a>
 
         <button
@@ -71,12 +71,12 @@ export default function Header() {
           onClick={() => setMenuOpen((v) => !v)}
         >
           <span
-            className={`h-px w-6 bg-fog transition-transform ${
+            className={`h-px w-6 bg-parchment transition-transform ${
               menuOpen ? "translate-y-[3.5px] rotate-45" : ""
             }`}
           />
           <span
-            className={`h-px w-6 bg-fog transition-transform ${
+            className={`h-px w-6 bg-parchment transition-transform ${
               menuOpen ? "-translate-y-[3.5px] -rotate-45" : ""
             }`}
           />
@@ -87,17 +87,17 @@ export default function Header() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="glass-panel border-t border-white/10 px-5 py-6 md:hidden"
+          className="glass-panel border-t border-hairline px-5 py-6 md:hidden"
         >
           <ul className="flex flex-col gap-5">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-base text-fog"
+                  className="text-sm tracking-[0.1em] text-parchment"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {link.label}
+                  {link.label.toUpperCase()}
                 </a>
               </li>
             ))}
@@ -106,9 +106,9 @@ export default function Header() {
                 href={mapsDirectionsUrl(siteConfig.business.mapsQuery)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex rounded-full border border-neon-cyan/40 bg-neon-cyan/10 px-5 py-2 text-sm font-medium text-neon-cyan"
+                className="inline-flex rounded-sm border border-hairline px-5 py-2 text-xs tracking-[0.15em] text-parchment"
               >
-                Get Directions
+                GET DIRECTIONS
               </a>
             </li>
           </ul>

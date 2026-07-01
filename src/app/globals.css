@@ -1,124 +1,133 @@
 @import "tailwindcss";
 
 :root {
-  --color-void: #030304;
-  --color-graphite-950: #08090b;
-  --color-graphite-900: #0d0f12;
-  --color-graphite-800: #14171b;
-  --color-graphite-700: #1d2126;
-  --color-graphite-600: #2a2f36;
-  --color-mist: #a4adb8;
-  --color-fog: #e9ecef;
-  --color-neon-cyan: #2ee6ff;
-  --color-neon-violet: #a35bff;
-  --color-neon-magenta: #ff4f9e;
+  --color-ink: #0b0906;
+  --color-espresso: #16110c;
+  --color-charcoal: #1e1811;
+  --color-smoke: #2c2419;
+  --color-hairline: rgba(200, 162, 92, 0.22);
+  --color-parchment: #f2e9d8;
+  --color-stone: #b7a996;
+  --color-stone-dim: #7c7264;
+  --color-brass: #c8a25c;
+  --color-brass-bright: #e2c17f;
+  --color-oxblood: #6e3230;
 }
 
 @theme inline {
-  --color-void: var(--color-void);
-  --color-graphite-950: var(--color-graphite-950);
-  --color-graphite-900: var(--color-graphite-900);
-  --color-graphite-800: var(--color-graphite-800);
-  --color-graphite-700: var(--color-graphite-700);
-  --color-graphite-600: var(--color-graphite-600);
-  --color-mist: var(--color-mist);
-  --color-fog: var(--color-fog);
-  --color-neon-cyan: var(--color-neon-cyan);
-  --color-neon-violet: var(--color-neon-violet);
-  --color-neon-magenta: var(--color-neon-magenta);
-  --font-display: var(--font-space-grotesk);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --animate-smoke-drift: smoke-drift 18s ease-in-out infinite;
-  --animate-smoke-drift-slow: smoke-drift 26s ease-in-out infinite reverse;
-  --animate-pulse-glow: pulse-glow 4s ease-in-out infinite;
-  --animate-float: float 7s ease-in-out infinite;
+  --color-ink: var(--color-ink);
+  --color-espresso: var(--color-espresso);
+  --color-charcoal: var(--color-charcoal);
+  --color-smoke: var(--color-smoke);
+  --color-hairline: var(--color-hairline);
+  --color-parchment: var(--color-parchment);
+  --color-stone: var(--color-stone);
+  --color-stone-dim: var(--color-stone-dim);
+  --color-brass: var(--color-brass);
+  --color-brass-bright: var(--color-brass-bright);
+  --color-oxblood: var(--color-oxblood);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-manrope);
+  --animate-dust-drift: dust-drift 16s ease-in-out infinite;
+  --animate-dust-drift-slow: dust-drift 24s ease-in-out infinite;
+  --animate-breathe: breathe 12s ease-in-out infinite;
+  --animate-breathe-slow: breathe 18s ease-in-out infinite;
 }
 
 * {
-  scrollbar-color: var(--color-graphite-600) transparent;
+  scrollbar-color: var(--color-smoke) transparent;
 }
 
 html {
-  background: var(--color-void);
+  background: var(--color-ink);
   color-scheme: dark;
 }
 
 body {
-  background: var(--color-void);
-  color: var(--color-fog);
+  background: var(--color-ink);
+  color: var(--color-parchment);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
 ::selection {
-  background: var(--color-neon-cyan);
-  color: var(--color-void);
+  background: var(--color-brass);
+  color: var(--color-ink);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-neon-cyan);
+  outline: 1.5px solid var(--color-brass);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 1px;
 }
 
 .font-display {
-  font-family: var(--font-display), var(--font-sans), sans-serif;
+  font-family: var(--font-display), var(--font-sans), serif;
 }
 
-.text-glow-cyan {
-  text-shadow: 0 0 24px rgba(46, 230, 255, 0.45), 0 0 64px rgba(46, 230, 255, 0.18);
+.text-warm-glow {
+  text-shadow: 0 0 46px rgba(200, 162, 92, 0.28);
 }
 
 .glass-panel {
   background: linear-gradient(
-    155deg,
-    rgba(255, 255, 255, 0.06),
-    rgba(255, 255, 255, 0.015)
+    165deg,
+    rgba(242, 233, 216, 0.05),
+    rgba(242, 233, 216, 0.015)
   );
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--color-hairline);
+  backdrop-filter: blur(14px) saturate(115%);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
 }
 
 .grain-overlay {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
   mix-blend-mode: overlay;
 }
 
-@keyframes smoke-drift {
+/* A tasteful stand-in for real interior/product photography.
+   Swap any element using this class for a next/image once real photos exist. */
+.photo-placeholder {
+  background:
+    radial-gradient(120% 90% at 25% 15%, rgba(200, 162, 92, 0.16), transparent 55%),
+    radial-gradient(90% 70% at 80% 85%, rgba(110, 50, 48, 0.22), transparent 60%),
+    linear-gradient(150deg, #221a13 0%, #14100b 55%, #0b0906 100%);
+  position: relative;
+}
+
+.photo-placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+@keyframes dust-drift {
   0% {
-    transform: translate3d(-4%, 2%, 0) scale(1) rotate(0deg);
-    opacity: 0.35;
+    transform: translate3d(0, 8%, 0);
+    opacity: 0;
   }
-  50% {
-    transform: translate3d(3%, -4%, 0) scale(1.15) rotate(6deg);
-    opacity: 0.55;
+  12% {
+    opacity: 0.5;
+  }
+  85% {
+    opacity: 0.35;
   }
   100% {
-    transform: translate3d(-4%, 2%, 0) scale(1) rotate(0deg);
-    opacity: 0.35;
+    transform: translate3d(2%, -60%, 0);
+    opacity: 0;
   }
 }
 
-@keyframes pulse-glow {
+@keyframes breathe {
   0%,
   100% {
-    opacity: 0.55;
-    filter: blur(40px);
+    opacity: 0.5;
+    filter: blur(60px);
   }
   50% {
-    opacity: 0.9;
-    filter: blur(55px);
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-14px);
+    opacity: 0.85;
+    filter: blur(75px);
   }
 }
 

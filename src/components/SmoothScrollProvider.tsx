@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 import Lenis from "lenis";
+import { MotionConfig } from "framer-motion";
 
 export default function SmoothScrollProvider({
   children,
@@ -38,5 +39,5 @@ export default function SmoothScrollProvider({
     };
   }, []);
 
-  return <>{children}</>;
+  return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
 }

@@ -1,107 +1,99 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { siteConfig } from "@/lib/site-config";
 import { mapsDirectionsUrl } from "@/lib/maps";
+import Dust from "@/components/Dust";
 
-const HeroScene = dynamic(() => import("@/components/HeroScene"), {
-  ssr: false,
-  loading: () => null,
-});
+const LUXE_EASE = [0.22, 1, 0.36, 1] as const;
 
 export default function Hero() {
-  const prefersReducedMotion = useReducedMotion();
-
   return (
     <section
       id="top"
       aria-label="Smoke Machine Express — Paarl's Premium Vape Destination"
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-void pt-24"
+      className="photo-placeholder relative flex min-h-[100svh] items-center overflow-hidden"
     >
-      {/* Ambient background */}
+      {/* Vignette + atmosphere */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute left-1/2 top-1/3 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-neon-cyan/20 blur-[120px] animate-pulse-glow" />
-        <div className="absolute right-0 top-2/3 h-[26rem] w-[26rem] rounded-full bg-neon-violet/20 blur-[110px] animate-smoke-drift" />
-        <div className="absolute left-0 bottom-0 h-[22rem] w-[22rem] rounded-full bg-neon-magenta/10 blur-[100px] animate-smoke-drift-slow" />
+        <div className="absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_40%,transparent_35%,rgba(11,9,6,0.75)_100%)]" />
+        <div className="absolute left-1/4 top-1/3 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brass/10 animate-breathe-slow" />
         <div className="absolute inset-0 grain-overlay" />
+        <Dust />
       </div>
 
-      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-6">
-        <div className="order-2 text-center lg:order-1 lg:text-left">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-5 font-mono text-xs tracking-[0.4em] text-neon-cyan/80"
-          >
-            CENTREPOINT · PAARL · WESTERN CAPE
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-fog text-glow-cyan sm:text-6xl lg:text-7xl"
-          >
-            SMOKE MACHINE
-            <br />
-            EXPRESS
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
-            className="mx-auto mt-6 max-w-md font-display text-xl text-mist lg:mx-0 sm:text-2xl"
-          >
-            {siteConfig.tagline}
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35 }}
-            className="mx-auto mt-4 max-w-md text-base text-mist/80 lg:mx-0"
-          >
-            Leading brands. Expert advice. A premium experience.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.45 }}
-            className="mx-auto mt-10 flex max-w-md flex-col gap-4 sm:flex-row lg:mx-0"
-          >
-            <a
-              href={mapsDirectionsUrl(siteConfig.business.mapsQuery)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-neon-cyan px-8 py-3.5 text-sm font-semibold tracking-wide text-void shadow-[0_0_40px_rgba(46,230,255,0.35)] transition-transform hover:scale-[1.03]"
-            >
-              Visit Us Today
-            </a>
-            <a
-              href="#location"
-              className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-3.5 text-sm font-semibold tracking-wide text-fog backdrop-blur transition-colors hover:border-neon-cyan/50 hover:text-neon-cyan"
-            >
-              Find Our Store
-            </a>
-          </motion.div>
-        </div>
-
-        <div
-          className="order-1 h-[380px] w-full sm:h-[460px] lg:order-2 lg:h-[620px]"
-          aria-hidden="true"
+      <div className="relative mx-auto w-full max-w-4xl px-6 text-center sm:px-8">
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, ease: LUXE_EASE }}
+          className="mb-7 text-xs font-medium tracking-[0.42em] text-brass"
         >
-          <HeroScene reducedMotion={!!prefersReducedMotion} />
-        </div>
+          CENTREPOINT · PAARL · WESTERN CAPE
+        </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4, delay: 0.25, ease: LUXE_EASE }}
+          className="font-display text-warm-glow text-5xl font-medium leading-[1.08] tracking-tight text-parchment sm:text-6xl lg:text-7xl"
+        >
+          Smoke Machine
+          <br />
+          <span className="italic text-brass-bright">Express</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.55, ease: LUXE_EASE }}
+          className="font-display mx-auto mt-8 max-w-lg text-xl italic text-stone sm:text-2xl"
+        >
+          {siteConfig.tagline}
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.75, ease: LUXE_EASE }}
+          className="mx-auto mt-5 max-w-md text-base leading-relaxed text-stone-dim"
+        >
+          Leading brands, unhurried advice, and a space built for taking your
+          time.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.95, ease: LUXE_EASE }}
+          className="mx-auto mt-12 flex max-w-md flex-col items-center gap-4 sm:flex-row sm:justify-center"
+        >
+          <a
+            href={mapsDirectionsUrl(siteConfig.business.mapsQuery)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-sm bg-brass px-9 py-3.5 text-xs font-semibold tracking-[0.18em] text-ink transition-colors duration-500 hover:bg-brass-bright"
+          >
+            VISIT US TODAY
+          </a>
+          <a
+            href="#location"
+            className="inline-flex items-center justify-center rounded-sm border border-hairline px-9 py-3.5 text-xs font-semibold tracking-[0.18em] text-parchment transition-colors duration-500 hover:border-brass hover:text-brass"
+          >
+            FIND OUR STORE
+          </a>
+        </motion.div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-mist/60 sm:flex">
-        <span className="text-[10px] tracking-[0.3em]">SCROLL</span>
-        <span className="h-8 w-px animate-pulse bg-gradient-to-b from-neon-cyan to-transparent" />
-      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, delay: 1.4 }}
+        className="absolute bottom-10 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-stone-dim sm:flex"
+      >
+        <span className="text-[10px] tracking-[0.35em]">SCROLL</span>
+        <span className="h-10 w-px bg-gradient-to-b from-brass/70 to-transparent" />
+      </motion.div>
     </section>
   );
 }
