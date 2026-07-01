@@ -17,13 +17,16 @@ function Device({ reducedMotion }: { reducedMotion: boolean }) {
 
   useFrame((state) => {
     if (!groupRef.current || reducedMotion) return;
-    groupRef.current.rotation.y = state.clock.elapsedTime * 0.22;
+    const t = state.clock.elapsedTime;
+    // Gentle back-and-forth sway rather than a full continuous spin
+    groupRef.current.rotation.y = 0.15 + Math.sin(t * 0.35) * 0.32;
+    groupRef.current.rotation.z = Math.sin(t * 0.5 + 1) * 0.05;
   });
 
   return (
     <Float
-      speed={reducedMotion ? 0 : 1.4}
-      rotationIntensity={reducedMotion ? 0 : 0.3}
+      speed={reducedMotion ? 0 : 1.2}
+      rotationIntensity={reducedMotion ? 0 : 0.1}
       floatIntensity={reducedMotion ? 0 : 0.7}
     >
       <group ref={groupRef} rotation={[0, reducedMotion ? -0.5 : 0.15, 0]}>
