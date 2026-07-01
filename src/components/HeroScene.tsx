@@ -16,42 +16,122 @@ function Device() {
   return (
     <Float speed={1.4} rotationIntensity={0.35} floatIntensity={0.9}>
       <group ref={groupRef}>
-        {/* Body */}
-        <RoundedBox args={[0.85, 2.6, 0.42]} radius={0.16} smoothness={6}>
+        {/* Main body (mod) */}
+        <RoundedBox args={[0.72, 1.7, 0.34]} radius={0.13} smoothness={6} position={[0, -0.55, 0]}>
           <meshPhysicalMaterial
-            color="#101317"
-            metalness={0.85}
-            roughness={0.22}
-            clearcoat={1}
-            clearcoatRoughness={0.15}
-            reflectivity={0.6}
+            color="#15181d"
+            metalness={0.75}
+            roughness={0.4}
+            clearcoat={0.6}
+            clearcoatRoughness={0.3}
+            reflectivity={0.5}
           />
         </RoundedBox>
 
-        {/* Accent strip */}
-        <mesh position={[0, 0.15, 0.215]}>
-          <boxGeometry args={[0.12, 1.9, 0.01]} />
+        {/* Front panel inset */}
+        <RoundedBox
+          args={[0.5, 1.3, 0.02]}
+          radius={0.08}
+          smoothness={4}
+          position={[0, -0.55, 0.175]}
+        >
+          <meshPhysicalMaterial color="#0a0c0f" metalness={0.3} roughness={0.55} />
+        </RoundedBox>
+
+        {/* OLED screen */}
+        <mesh position={[0, -0.12, 0.19]}>
+          <planeGeometry args={[0.36, 0.22]} />
           <meshStandardMaterial
-            color="#2ee6ff"
+            color="#08363f"
             emissive="#2ee6ff"
-            emissiveIntensity={2.4}
+            emissiveIntensity={1.1}
             toneMapped={false}
           />
         </mesh>
 
-        {/* Mouthpiece */}
-        <mesh position={[0, 1.55, 0]}>
-          <cylinderGeometry args={[0.16, 0.22, 0.5, 24]} />
+        {/* Fire button */}
+        <mesh position={[0, -0.55, 0.2]} rotation={[Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[0.09, 0.09, 0.03, 32]} />
+          <meshStandardMaterial
+            color="#a35bff"
+            emissive="#a35bff"
+            emissiveIntensity={1.6}
+            toneMapped={false}
+          />
+        </mesh>
+
+        {/* Adjustment buttons */}
+        <mesh position={[0, -1.0, 0.185]}>
+          <boxGeometry args={[0.1, 0.05, 0.02]} />
+          <meshStandardMaterial color="#3a4048" metalness={0.6} roughness={0.4} />
+        </mesh>
+        <mesh position={[0, -1.12, 0.185]}>
+          <boxGeometry args={[0.1, 0.05, 0.02]} />
+          <meshStandardMaterial color="#3a4048" metalness={0.6} roughness={0.4} />
+        </mesh>
+
+        {/* Vertical accent seam */}
+        <mesh position={[0.355, -0.55, 0.06]}>
+          <boxGeometry args={[0.015, 1.55, 0.015]} />
+          <meshStandardMaterial
+            color="#2ee6ff"
+            emissive="#2ee6ff"
+            emissiveIntensity={2.6}
+            toneMapped={false}
+          />
+        </mesh>
+
+        {/* Collar connecting mod to pod */}
+        <mesh position={[0, 0.32, 0]}>
+          <cylinderGeometry args={[0.22, 0.26, 0.08, 32]} />
+          <meshPhysicalMaterial color="#e8ecef" metalness={0.9} roughness={0.25} />
+        </mesh>
+
+        {/* Pod / cartridge — translucent, lighter than body */}
+        <mesh position={[0, 0.85, 0]}>
+          <cylinderGeometry args={[0.19, 0.21, 1.0, 32]} />
           <meshPhysicalMaterial
-            color="#0b0d0f"
-            metalness={0.6}
-            roughness={0.35}
+            color="#2b3038"
+            metalness={0.2}
+            roughness={0.15}
+            transmission={0.55}
+            thickness={0.4}
+            ior={1.4}
+            clearcoat={1}
+          />
+        </mesh>
+
+        {/* E-liquid glow inside pod */}
+        <mesh position={[0, 0.72, 0]}>
+          <cylinderGeometry args={[0.13, 0.13, 0.55, 24]} />
+          <meshStandardMaterial
+            color="#a35bff"
+            emissive="#a35bff"
+            emissiveIntensity={1.2}
+            toneMapped={false}
+            transparent
+            opacity={0.75}
+          />
+        </mesh>
+
+        {/* Drip tip */}
+        <mesh position={[0, 1.42, 0]}>
+          <cylinderGeometry args={[0.1, 0.17, 0.24, 24]} />
+          <meshPhysicalMaterial color="#050607" metalness={0.4} roughness={0.5} />
+        </mesh>
+        <mesh position={[0, 1.56, 0]}>
+          <cylinderGeometry args={[0.095, 0.1, 0.05, 24]} />
+          <meshStandardMaterial
+            color="#2ee6ff"
+            emissive="#2ee6ff"
+            emissiveIntensity={2}
+            toneMapped={false}
           />
         </mesh>
 
         {/* Base glow ring */}
-        <mesh position={[0, -1.3, 0]} rotation={[Math.PI / 2, 0, 0]}>
-          <ringGeometry args={[0.32, 0.44, 32]} />
+        <mesh position={[0, -1.42, 0]} rotation={[Math.PI / 2, 0, 0]}>
+          <ringGeometry args={[0.26, 0.36, 32]} />
           <meshStandardMaterial
             color="#a35bff"
             emissive="#a35bff"
@@ -73,10 +153,12 @@ export default function HeroScene() {
       gl={{ antialias: true, alpha: true, powerPreference: "low-power" }}
     >
       <Suspense fallback={null}>
-        <ambientLight intensity={0.25} />
+        <ambientLight intensity={0.35} />
+        <directionalLight position={[2.5, 4, 5]} intensity={1.4} color="#f5f9fa" />
         <pointLight position={[3, 3, 4]} intensity={40} color="#2ee6ff" />
         <pointLight position={[-3, -2, 3]} intensity={30} color="#a35bff" />
         <pointLight position={[0, -3, -2]} intensity={18} color="#ff4f9e" />
+        <pointLight position={[-1.5, 1, 2.5]} intensity={12} color="#ffffff" />
 
         <Device />
 
