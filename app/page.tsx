@@ -71,7 +71,7 @@ export default function Home() {
 
   return (
     <main className="relative bg-charcoal-950">
-      <div ref={heroRef} className="relative h-[400vh]">
+      <div ref={heroRef} className="relative h-[300vh]">
         <div className="sticky top-0 h-screen w-full overflow-hidden">
           {isDesktop ? <SmokeScene progress={scrollYProgress} /> : <MobileHeroFallback />}
           <HeroOverlay progress={scrollYProgress} />

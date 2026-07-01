@@ -8,10 +8,10 @@ type HeroOverlayProps = {
 };
 
 export function HeroOverlay({ progress }: HeroOverlayProps) {
-  const titleOpacity = useTransform(progress, [0, 0.32, 0.46], [1, 1, 0]);
+  const titleOpacity = useTransform(progress, [0, 0.16, 0.24], [1, 1, 0]);
 
-  const midOpacity = useTransform(progress, [0.34, 0.48, 0.62, 0.74], [0, 1, 1, 0]);
-  const midY = useTransform(progress, [0.34, 0.48], [24, 0]);
+  const midOpacity = useTransform(progress, [0.2, 0.28, 0.5, 0.6], [0, 1, 1, 0]);
+  const midY = useTransform(progress, [0.2, 0.28], [24, 0]);
 
   const cueOpacity = useTransform(progress, [0, 0.06], [1, 0]);
   const vignette = useTransform(progress, [0, 0.5, 1], [0.55, 0.25, 0.75]);
