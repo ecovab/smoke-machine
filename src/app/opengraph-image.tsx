@@ -17,7 +17,7 @@ export default function OgImage() {
           alignItems: "center",
           justifyContent: "center",
           background:
-            "radial-gradient(circle at 30% 15%, #2a2016 0%, #0b0906 55%, #0b0906 100%)",
+            "radial-gradient(circle at 30% 15%, #16202b 0%, #06080a 55%, #06080a 100%)",
           position: "relative",
         }}
       >
@@ -30,7 +30,7 @@ export default function OgImage() {
             height: 480,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(200,162,92,0.28) 0%, rgba(200,162,92,0) 70%)",
+              "radial-gradient(circle, rgba(111,214,255,0.24) 0%, rgba(111,214,255,0) 70%)",
             display: "flex",
           }}
         />
@@ -38,7 +38,7 @@ export default function OgImage() {
           style={{
             fontSize: 24,
             letterSpacing: 10,
-            color: "#c8a25c",
+            color: "#6fd6ff",
             fontWeight: 500,
             marginBottom: 20,
             display: "flex",
@@ -50,7 +50,7 @@ export default function OgImage() {
           style={{
             fontSize: 80,
             fontWeight: 500,
-            color: "#f2e9d8",
+            color: "#eef2f6",
             letterSpacing: 1,
             textAlign: "center",
             display: "flex",
@@ -61,7 +61,7 @@ export default function OgImage() {
         <div
           style={{
             fontSize: 30,
-            color: "#b7a996",
+            color: "#9aa7b5",
             marginTop: 24,
             display: "flex",
           }}

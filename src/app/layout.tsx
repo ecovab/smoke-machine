@@ -64,7 +64,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b0906",
+  themeColor: "#06080a",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -115,7 +115,7 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-ink text-parchment">
+      <body className="min-h-full flex flex-col bg-ink text-platinum">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -124,7 +124,7 @@ export default function RootLayout({
         />
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-brass focus:px-4 focus:py-2 focus:text-ink focus:font-semibold"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-ice focus:px-4 focus:py-2 focus:text-ink focus:font-semibold"
         >
           Skip to main content
         </a>

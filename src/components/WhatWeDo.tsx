@@ -33,14 +33,14 @@ export default function WhatWeDo() {
     >
       <div className="mx-auto max-w-4xl px-6 sm:px-8">
         <Reveal>
-          <p className="mb-5 text-xs font-medium tracking-[0.4em] text-brass">
+          <p className="mb-5 text-xs font-medium tracking-[0.4em] text-ice">
             OUR EXPERTISE
           </p>
         </Reveal>
         <Reveal delay={0.1}>
           <h2
             id="craft-heading"
-            className="font-display text-4xl font-medium text-parchment sm:text-5xl"
+            className="font-display text-4xl font-medium text-platinum sm:text-5xl"
           >
             What We Do
           </h2>
@@ -50,10 +50,10 @@ export default function WhatWeDo() {
           {ITEMS.map((item, i) => (
             <Reveal key={item.number} as="li" delay={i * 0.12}>
               <div className="group flex flex-col gap-2 border-b border-hairline py-8 sm:flex-row sm:items-baseline sm:gap-8 sm:py-10">
-                <span className="font-display text-sm text-stone-dim transition-colors duration-500 group-hover:text-brass sm:w-12 sm:flex-none">
+                <span className="font-display text-sm text-stone-dim transition-colors duration-500 group-hover:text-ice sm:w-12 sm:flex-none">
                   {item.number}
                 </span>
-                <h3 className="font-display flex-none text-2xl font-medium text-parchment sm:w-80">
+                <h3 className="font-display flex-none text-2xl font-medium text-platinum sm:w-80">
                   {item.title}
                 </h3>
                 <p className="max-w-md text-base leading-relaxed text-stone">

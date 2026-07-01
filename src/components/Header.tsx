@@ -33,9 +33,9 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
         <a
           href="#top"
-          className="font-display text-sm tracking-[0.3em] text-parchment sm:text-base"
+          className="font-display text-sm tracking-[0.3em] text-platinum sm:text-base"
         >
-          SMOKE MACHINE <span className="italic text-brass">Express</span>
+          SMOKE MACHINE <span className="italic text-ice">Express</span>
         </a>
 
         <nav
@@ -46,7 +46,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-xs tracking-[0.15em] text-stone transition-colors duration-500 hover:text-brass"
+              className="text-xs tracking-[0.15em] text-stone transition-colors duration-500 hover:text-ice"
             >
               {link.label.toUpperCase()}
             </a>
@@ -57,7 +57,7 @@ export default function Header() {
           href={mapsDirectionsUrl(siteConfig.business.mapsQuery)}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden rounded-sm border border-hairline px-5 py-2 text-xs tracking-[0.15em] text-parchment transition-colors duration-500 hover:border-brass hover:text-brass md:inline-flex"
+          className="hidden rounded-sm border border-hairline px-5 py-2 text-xs tracking-[0.15em] text-platinum transition-colors duration-500 hover:border-ice hover:text-ice md:inline-flex"
         >
           GET DIRECTIONS
         </a>
@@ -71,12 +71,12 @@ export default function Header() {
           onClick={() => setMenuOpen((v) => !v)}
         >
           <span
-            className={`h-px w-6 bg-parchment transition-transform ${
+            className={`h-px w-6 bg-platinum transition-transform ${
               menuOpen ? "translate-y-[3.5px] rotate-45" : ""
             }`}
           />
           <span
-            className={`h-px w-6 bg-parchment transition-transform ${
+            className={`h-px w-6 bg-platinum transition-transform ${
               menuOpen ? "-translate-y-[3.5px] -rotate-45" : ""
             }`}
           />
@@ -94,7 +94,7 @@ export default function Header() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm tracking-[0.1em] text-parchment"
+                  className="text-sm tracking-[0.1em] text-platinum"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label.toUpperCase()}
@@ -106,7 +106,7 @@ export default function Header() {
                 href={mapsDirectionsUrl(siteConfig.business.mapsQuery)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex rounded-sm border border-hairline px-5 py-2 text-xs tracking-[0.15em] text-parchment"
+                className="inline-flex rounded-sm border border-hairline px-5 py-2 text-xs tracking-[0.15em] text-platinum"
               >
                 GET DIRECTIONS
               </a>

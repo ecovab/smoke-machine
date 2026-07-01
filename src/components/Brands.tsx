@@ -6,18 +6,18 @@ export default function Brands() {
     <section
       id="brands"
       aria-labelledby="brands-heading"
-      className="relative bg-espresso py-28 sm:py-36"
+      className="relative bg-slate py-28 sm:py-36"
     >
       <div className="mx-auto max-w-4xl px-6 text-center sm:px-8">
         <Reveal>
-          <p className="mb-5 text-xs font-medium tracking-[0.4em] text-brass">
+          <p className="mb-5 text-xs font-medium tracking-[0.4em] text-ice">
             CURATED SELECTION
           </p>
         </Reveal>
         <Reveal delay={0.1}>
           <h2
             id="brands-heading"
-            className="font-display text-4xl font-medium text-parchment sm:text-5xl"
+            className="font-display text-4xl font-medium text-platinum sm:text-5xl"
           >
             Trusted Brands
           </h2>
@@ -34,7 +34,7 @@ export default function Brands() {
             {siteConfig.brands.map((brand) => (
               <span
                 key={brand.name}
-                className="font-display text-2xl tracking-wide text-parchment/90 transition-colors duration-500 hover:text-brass sm:text-3xl"
+                className="font-display text-2xl tracking-wide text-platinum/90 transition-colors duration-500 hover:text-ice sm:text-3xl"
               >
                 {brand.name}
               </span>

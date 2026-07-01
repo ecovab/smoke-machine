@@ -6,12 +6,12 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="relative z-10 -mt-16 rounded-t-[2.5rem] bg-espresso pb-28 pt-24 sm:-mt-20 sm:rounded-t-[3.5rem] sm:pb-36 sm:pt-32"
+      className="relative z-10 -mt-16 rounded-t-[2.5rem] bg-slate pb-28 pt-24 sm:-mt-20 sm:rounded-t-[3.5rem] sm:pb-36 sm:pt-32"
     >
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
         <div>
           <Reveal>
-            <p className="mb-5 text-xs font-medium tracking-[0.4em] text-brass">
+            <p className="mb-5 text-xs font-medium tracking-[0.4em] text-ice">
               OUR STORY
             </p>
           </Reveal>
@@ -19,7 +19,7 @@ export default function About() {
           <Reveal delay={0.1}>
             <h2
               id="about-heading"
-              className="font-display text-4xl font-medium leading-tight text-parchment sm:text-5xl"
+              className="font-display text-4xl font-medium leading-tight text-platinum sm:text-5xl"
             >
               A trusted room in the heart of Paarl.
             </h2>

@@ -1,31 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  --color-ink: #0b0906;
-  --color-espresso: #16110c;
-  --color-charcoal: #1e1811;
-  --color-smoke: #2c2419;
-  --color-hairline: rgba(200, 162, 92, 0.22);
-  --color-parchment: #f2e9d8;
-  --color-stone: #b7a996;
-  --color-stone-dim: #7c7264;
-  --color-brass: #c8a25c;
-  --color-brass-bright: #e2c17f;
-  --color-oxblood: #6e3230;
+  --color-ink: #06080a;
+  --color-slate: #0d1116;
+  --color-charcoal: #131922;
+  --color-smoke: #1c2430;
+  --color-hairline: rgba(126, 203, 255, 0.16);
+  --color-platinum: #eef2f6;
+  --color-stone: #9aa7b5;
+  --color-stone-dim: #616d7a;
+  --color-ice: #6fd6ff;
+  --color-ice-bright: #b3ecff;
+  --color-sapphire: #24406e;
 }
 
 @theme inline {
   --color-ink: var(--color-ink);
-  --color-espresso: var(--color-espresso);
+  --color-slate: var(--color-slate);
   --color-charcoal: var(--color-charcoal);
   --color-smoke: var(--color-smoke);
   --color-hairline: var(--color-hairline);
-  --color-parchment: var(--color-parchment);
+  --color-platinum: var(--color-platinum);
   --color-stone: var(--color-stone);
   --color-stone-dim: var(--color-stone-dim);
-  --color-brass: var(--color-brass);
-  --color-brass-bright: var(--color-brass-bright);
-  --color-oxblood: var(--color-oxblood);
+  --color-ice: var(--color-ice);
+  --color-ice-bright: var(--color-ice-bright);
+  --color-sapphire: var(--color-sapphire);
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-manrope);
   --animate-dust-drift: dust-drift 16s ease-in-out infinite;
@@ -45,17 +45,17 @@ html {
 
 body {
   background: var(--color-ink);
-  color: var(--color-parchment);
+  color: var(--color-platinum);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
 ::selection {
-  background: var(--color-brass);
+  background: var(--color-ice);
   color: var(--color-ink);
 }
 
 :focus-visible {
-  outline: 1.5px solid var(--color-brass);
+  outline: 1.5px solid var(--color-ice);
   outline-offset: 3px;
   border-radius: 1px;
 }
@@ -64,15 +64,15 @@ body {
   font-family: var(--font-display), var(--font-sans), serif;
 }
 
-.text-warm-glow {
-  text-shadow: 0 0 46px rgba(200, 162, 92, 0.28);
+.text-glow {
+  text-shadow: 0 0 46px rgba(111, 214, 255, 0.3);
 }
 
 .glass-panel {
   background: linear-gradient(
     165deg,
-    rgba(242, 233, 216, 0.05),
-    rgba(242, 233, 216, 0.015)
+    rgba(238, 242, 246, 0.05),
+    rgba(238, 242, 246, 0.015)
   );
   border: 1px solid var(--color-hairline);
   backdrop-filter: blur(14px) saturate(115%);
@@ -88,9 +88,9 @@ body {
    Swap any element using this class for a next/image once real photos exist. */
 .photo-placeholder {
   background:
-    radial-gradient(120% 90% at 25% 15%, rgba(200, 162, 92, 0.16), transparent 55%),
-    radial-gradient(90% 70% at 80% 85%, rgba(110, 50, 48, 0.22), transparent 60%),
-    linear-gradient(150deg, #221a13 0%, #14100b 55%, #0b0906 100%);
+    radial-gradient(120% 90% at 25% 15%, rgba(111, 214, 255, 0.14), transparent 55%),
+    radial-gradient(90% 70% at 80% 85%, rgba(36, 64, 110, 0.3), transparent 60%),
+    linear-gradient(150deg, #182029 0%, #0e131a 55%, #06080a 100%);
   position: relative;
 }
 

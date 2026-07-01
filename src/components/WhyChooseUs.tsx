@@ -17,14 +17,14 @@ export default function WhyChooseUs() {
       <div className="mx-auto max-w-6xl px-6 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
-            <p className="mb-5 text-xs font-medium tracking-[0.4em] text-brass">
+            <p className="mb-5 text-xs font-medium tracking-[0.4em] text-ice">
               THE DIFFERENCE
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h2
               id="why-choose-heading"
-              className="font-display text-4xl font-medium text-parchment sm:text-5xl"
+              className="font-display text-4xl font-medium text-platinum sm:text-5xl"
             >
               Why Customers Choose Us
             </h2>
@@ -39,10 +39,10 @@ export default function WhyChooseUs() {
                   i === 0 ? "sm:border-l-0" : "sm:border-l"
                 } sm:border-hairline`}
               >
-                <span className="text-[11px] font-medium tracking-[0.25em] text-brass">
+                <span className="text-[11px] font-medium tracking-[0.25em] text-ice">
                   {item.title.toUpperCase()}
                 </span>
-                <span className="font-display text-xl text-parchment">
+                <span className="font-display text-xl text-platinum">
                   {item.detail}
                 </span>
               </div>

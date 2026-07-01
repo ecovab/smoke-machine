@@ -20,7 +20,7 @@ export default function Dust({ className = "" }: { className?: string }) {
       {PARTICLES.map((p, i) => (
         <span
           key={i}
-          className="absolute bottom-0 rounded-full bg-brass/40 animate-dust-drift"
+          className="absolute bottom-0 rounded-full bg-ice/40 animate-dust-drift"
           style={{
             left: p.left,
             width: p.size,

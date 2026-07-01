@@ -12,14 +12,14 @@ export default function Location() {
       <div className="mx-auto max-w-6xl px-6 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
-            <p className="mb-5 text-xs font-medium tracking-[0.4em] text-brass">
+            <p className="mb-5 text-xs font-medium tracking-[0.4em] text-ice">
               FIND US
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h2
               id="location-heading"
-              className="font-display text-4xl font-medium text-parchment sm:text-5xl"
+              className="font-display text-4xl font-medium text-platinum sm:text-5xl"
             >
               Visit Us in Paarl
             </h2>
@@ -31,7 +31,7 @@ export default function Location() {
             <iframe
               title={`Map showing ${siteConfig.name} at ${siteConfig.business.mapsQuery}`}
               src={mapsEmbedUrl(siteConfig.business.mapsQuery)}
-              className="h-full w-full opacity-90 grayscale contrast-125 sepia"
+              className="h-full w-full opacity-90 grayscale sepia hue-rotate-180 contrast-125"
               style={{ border: 0, minHeight: "18rem" }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -41,7 +41,7 @@ export default function Location() {
           <Reveal delay={0.15}>
             <div className="glass-panel flex h-full flex-col justify-center gap-7 p-8 sm:p-12">
               <div>
-                <h3 className="font-display text-2xl font-medium text-parchment">
+                <h3 className="font-display text-2xl font-medium text-platinum">
                   {siteConfig.name}
                 </h3>
                 <p className="mt-3 text-stone">
@@ -60,7 +60,7 @@ export default function Location() {
                 href={mapsDirectionsUrl(siteConfig.business.mapsQuery)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-fit items-center justify-center rounded-sm bg-brass px-7 py-3 text-xs font-semibold tracking-[0.18em] text-ink transition-colors duration-500 hover:bg-brass-bright"
+                className="inline-flex w-fit items-center justify-center rounded-sm bg-ice px-7 py-3 text-xs font-semibold tracking-[0.18em] text-ink transition-colors duration-500 hover:bg-ice-bright"
               >
                 GET DIRECTIONS
               </a>

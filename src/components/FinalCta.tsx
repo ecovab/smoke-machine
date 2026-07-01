@@ -10,8 +10,8 @@ export default function FinalCta() {
       className="photo-placeholder relative overflow-hidden py-32 sm:py-40"
     >
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute inset-0 bg-[radial-gradient(90%_70%_at_50%_50%,transparent_30%,rgba(11,9,6,0.8)_100%)]" />
-        <div className="absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brass/10 animate-breathe" />
+        <div className="absolute inset-0 bg-[radial-gradient(90%_70%_at_50%_50%,transparent_30%,rgba(6,8,10,0.82)_100%)]" />
+        <div className="absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-ice/10 animate-breathe" />
         <div className="absolute inset-0 grain-overlay" />
         <Dust />
       </div>
@@ -20,9 +20,9 @@ export default function FinalCta() {
         <Reveal>
           <h2
             id="final-cta-heading"
-            className="font-display text-warm-glow text-4xl font-medium text-parchment sm:text-5xl"
+            className="font-display text-glow text-4xl font-medium text-platinum sm:text-5xl"
           >
-            Experience the <span className="italic text-brass-bright">Difference</span>
+            Experience the <span className="italic text-ice-bright">Difference</span>
           </h2>
         </Reveal>
 
@@ -39,13 +39,13 @@ export default function FinalCta() {
               href={mapsDirectionsUrl(siteConfig.business.mapsQuery)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-sm bg-brass px-9 py-3.5 text-xs font-semibold tracking-[0.18em] text-ink transition-colors duration-500 hover:bg-brass-bright"
+              className="inline-flex items-center justify-center rounded-sm bg-ice px-9 py-3.5 text-xs font-semibold tracking-[0.18em] text-ink transition-colors duration-500 hover:bg-ice-bright"
             >
               VISIT TODAY
             </a>
             <a
               href="#location"
-              className="inline-flex items-center justify-center rounded-sm border border-hairline px-9 py-3.5 text-xs font-semibold tracking-[0.18em] text-parchment transition-colors duration-500 hover:border-brass hover:text-brass"
+              className="inline-flex items-center justify-center rounded-sm border border-hairline px-9 py-3.5 text-xs font-semibold tracking-[0.18em] text-platinum transition-colors duration-500 hover:border-ice hover:text-ice"
             >
               CONTACT US
             </a>

@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className="border-t border-hairline bg-ink py-12">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-5 px-6 text-center sm:px-8">
-        <p className="font-display text-sm tracking-[0.3em] text-parchment">
-          SMOKE MACHINE <span className="italic text-brass">Express</span>
+        <p className="font-display text-sm tracking-[0.3em] text-platinum">
+          SMOKE MACHINE <span className="italic text-ice">Express</span>
         </p>
         <p className="text-sm text-stone">
           {siteConfig.business.streetAddress},{" "}
