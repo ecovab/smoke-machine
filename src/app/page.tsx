@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import WhatWeDo from "@/components/WhatWeDo";
-import Brands from "@/components/Brands";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import Categories from "@/components/Categories";
+import ProductShowcase from "@/components/ProductShowcase";
+import Featured from "@/components/Featured";
 import Location from "@/components/Location";
-import FinalCta from "@/components/FinalCta";
+import Contact from "@/components/Contact";
+import About from "@/components/About";
+import AgeNotice from "@/components/AgeNotice";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -14,12 +15,13 @@ export default function Home() {
       <Header />
       <main id="main-content">
         <Hero />
-        <About />
-        <WhatWeDo />
-        <Brands />
-        <WhyChooseUs />
+        <Categories />
+        <ProductShowcase />
+        <Featured />
         <Location />
-        <FinalCta />
+        <Contact />
+        <About />
+        <AgeNotice />
       </main>
       <Footer />
     </>

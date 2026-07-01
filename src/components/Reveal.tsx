@@ -11,13 +11,11 @@ type RevealProps = {
   as?: "div" | "li";
 };
 
-const LUXE_EASE = [0.22, 1, 0.36, 1] as const;
-
 export default function Reveal({
   children,
   className,
   delay = 0,
-  y = 22,
+  y = 10,
   as = "div",
 }: RevealProps) {
   const prefersReducedMotion = useReducedMotion();
@@ -27,7 +25,7 @@ export default function Reveal({
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 1.3, delay, ease: LUXE_EASE },
+      transition: { duration: 0.4, delay, ease: "easeOut" },
     },
   };
 
@@ -38,7 +36,7 @@ export default function Reveal({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-40px" }}
       variants={variants}
     >
       {children}

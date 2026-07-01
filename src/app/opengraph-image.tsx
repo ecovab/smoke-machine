@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/site-config";
 
-export const alt = `${siteConfig.name} — Paarl's Premium Vape Destination`;
+export const alt = `${siteConfig.name} Vape Shop — Paarl, Western Cape`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -16,8 +16,7 @@ export default function OgImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background:
-            "radial-gradient(circle at 30% 15%, #16202b 0%, #06080a 55%, #06080a 100%)",
+          background: "#faf9f7",
           position: "relative",
         }}
       >
@@ -30,16 +29,16 @@ export default function OgImage() {
             height: 480,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(111,214,255,0.24) 0%, rgba(111,214,255,0) 70%)",
+              "radial-gradient(circle, rgba(47,95,216,0.14) 0%, rgba(47,95,216,0) 70%)",
             display: "flex",
           }}
         />
         <div
           style={{
-            fontSize: 24,
-            letterSpacing: 10,
-            color: "#6fd6ff",
-            fontWeight: 500,
+            fontSize: 22,
+            letterSpacing: 6,
+            color: "#2f5fd8",
+            fontWeight: 600,
             marginBottom: 20,
             display: "flex",
           }}
@@ -48,25 +47,25 @@ export default function OgImage() {
         </div>
         <div
           style={{
-            fontSize: 80,
-            fontWeight: 500,
-            color: "#eef2f6",
-            letterSpacing: 1,
+            fontSize: 76,
+            fontWeight: 700,
+            color: "#26241f",
+            letterSpacing: -1,
             textAlign: "center",
             display: "flex",
           }}
         >
-          Smoke Machine Express
+          Smoke Machine
         </div>
         <div
           style={{
             fontSize: 30,
-            color: "#9aa7b5",
+            color: "#605c53",
             marginTop: 24,
             display: "flex",
           }}
         >
-          Paarl&apos;s Premium Vape Destination
+          Vape Shop &amp; Product Catalogue
         </div>
       </div>
     ),

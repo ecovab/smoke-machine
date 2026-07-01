@@ -1,14 +1,12 @@
-# Smoke Machine Express
+# Smoke Machine
 
-Cinematic brand website for Smoke Machine Express — a premium vape retailer at Centrepoint, Paarl, Western Cape. This is a brand/marketing site, not an online store: no prices, cart, or checkout.
+Product catalogue / digital showroom website for Smoke Machine — a local vape shop at Centrepoint, Paarl, Western Cape. This is **not** an online store: no cart, checkout, payments, or ordering flow. It exists to help customers browse the range online and then visit, WhatsApp, or call the physical shop.
 
 ## Stack
 
 - Next.js (App Router) + TypeScript
 - Tailwind CSS v4
-- Framer Motion (scroll reveals, hero transitions)
-- Three.js via `@react-three/fiber` / `@react-three/drei` (hero 3D device + particles)
-- Lenis (smooth scrolling, disabled when `prefers-reduced-motion` is set)
+- Framer Motion (subtle scroll-in fades only, respects `prefers-reduced-motion`)
 
 ## Getting started
 
@@ -28,7 +26,8 @@ npm run start
 
 ## Notes
 
-- Business details (name, address, hours, brands) live in `src/lib/site-config.ts` — update there.
-- No phone number or email was provided for the business, so contact CTAs currently link to Google Maps directions/the location section. Add real contact details to `site-config.ts` and the relevant components once available.
+- **WhatsApp/phone numbers are not set yet.** `src/lib/site-config.ts` has `contact.whatsapp` and `contact.phone` as empty strings with a `TODO` comment. Until they're filled in, every "WhatsApp Us" / call CTA falls back to the in-page Visit Our Store section (`src/lib/contact.ts`) instead of shipping a broken or fake link. Fill these in before launch.
+- Business details (name, address, hours, brands) live in `src/lib/site-config.ts`.
+- Product/category data lives in `src/lib/products.ts` — the current entries are generic placeholders (neutral descriptions, no pricing) structured for easy editing once a real product list is available. Swap `ImagePlaceholder` usages for `next/image` once real product/category photos exist.
 - Set `NEXT_PUBLIC_SITE_URL` to the production domain before deploying — it feeds canonical URLs, Open Graph tags, and the sitemap/robots files.
-- The location section embeds Google Maps via `output=embed` (no API key needed).
+- The Visit Our Store section embeds Google Maps via `output=embed` (no API key needed).

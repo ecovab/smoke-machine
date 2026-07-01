@@ -1,137 +1,82 @@
 @import "tailwindcss";
 
 :root {
-  --color-ink: #06080a;
-  --color-slate: #0d1116;
-  --color-charcoal: #131922;
-  --color-smoke: #1c2430;
-  --color-hairline: rgba(126, 203, 255, 0.16);
-  --color-platinum: #eef2f6;
-  --color-stone: #9aa7b5;
-  --color-stone-dim: #616d7a;
-  --color-ice: #6fd6ff;
-  --color-ice-bright: #b3ecff;
-  --color-sapphire: #24406e;
+  --color-paper: #faf9f7;
+  --color-panel: #ffffff;
+  --color-mist: #f1efec;
+  --color-line: #e4e1db;
+  --color-ink: #26241f;
+  --color-ink-soft: #605c53;
+  --color-ink-faint: #8b867a;
+  --color-accent: #2f5fd8;
+  --color-accent-soft: #eaf0fd;
+  --color-accent-dark: #24499f;
 }
 
 @theme inline {
+  --color-paper: var(--color-paper);
+  --color-panel: var(--color-panel);
+  --color-mist: var(--color-mist);
+  --color-line: var(--color-line);
   --color-ink: var(--color-ink);
-  --color-slate: var(--color-slate);
-  --color-charcoal: var(--color-charcoal);
-  --color-smoke: var(--color-smoke);
-  --color-hairline: var(--color-hairline);
-  --color-platinum: var(--color-platinum);
-  --color-stone: var(--color-stone);
-  --color-stone-dim: var(--color-stone-dim);
-  --color-ice: var(--color-ice);
-  --color-ice-bright: var(--color-ice-bright);
-  --color-sapphire: var(--color-sapphire);
-  --font-display: var(--font-fraunces);
-  --font-sans: var(--font-manrope);
-  --animate-dust-drift: dust-drift 16s ease-in-out infinite;
-  --animate-dust-drift-slow: dust-drift 24s ease-in-out infinite;
-  --animate-breathe: breathe 12s ease-in-out infinite;
-  --animate-breathe-slow: breathe 18s ease-in-out infinite;
-}
-
-* {
-  scrollbar-color: var(--color-smoke) transparent;
+  --color-ink-soft: var(--color-ink-soft);
+  --color-ink-faint: var(--color-ink-faint);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-accent-dark: var(--color-accent-dark);
+  --font-sans: var(--font-inter);
 }
 
 html {
-  background: var(--color-ink);
-  color-scheme: dark;
+  background: var(--color-paper);
+  color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--color-ink);
-  color: var(--color-platinum);
+  background: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
 ::selection {
-  background: var(--color-ice);
-  color: var(--color-ink);
+  background: var(--color-accent);
+  color: #ffffff;
 }
 
 :focus-visible {
-  outline: 1.5px solid var(--color-ice);
-  outline-offset: 3px;
-  border-radius: 1px;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
-.font-display {
-  font-family: var(--font-display), var(--font-sans), serif;
+.card-hover {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
-.text-glow {
-  text-shadow: 0 0 46px rgba(111, 214, 255, 0.3);
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(38, 36, 31, 0.08);
+  border-color: var(--color-accent);
 }
 
-.glass-panel {
-  background: linear-gradient(
-    165deg,
-    rgba(238, 242, 246, 0.05),
-    rgba(238, 242, 246, 0.015)
-  );
-  border: 1px solid var(--color-hairline);
-  backdrop-filter: blur(14px) saturate(115%);
-  -webkit-backdrop-filter: blur(14px) saturate(115%);
-}
-
-.grain-overlay {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
-}
-
-/* A tasteful stand-in for real interior/product photography.
+/* Neutral stand-in for real product/interior photography.
    Swap any element using this class for a next/image once real photos exist. */
-.photo-placeholder {
-  background:
-    radial-gradient(120% 90% at 25% 15%, rgba(111, 214, 255, 0.14), transparent 55%),
-    radial-gradient(90% 70% at 80% 85%, rgba(36, 64, 110, 0.3), transparent 60%),
-    linear-gradient(150deg, #182029 0%, #0e131a 55%, #06080a 100%);
-  position: relative;
-}
-
-.photo-placeholder::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
-}
-
-@keyframes dust-drift {
-  0% {
-    transform: translate3d(0, 8%, 0);
-    opacity: 0;
-  }
-  12% {
-    opacity: 0.5;
-  }
-  85% {
-    opacity: 0.35;
-  }
-  100% {
-    transform: translate3d(2%, -60%, 0);
-    opacity: 0;
-  }
-}
-
-@keyframes breathe {
-  0%,
-  100% {
-    opacity: 0.5;
-    filter: blur(60px);
-  }
-  50% {
-    opacity: 0.85;
-    filter: blur(75px);
-  }
+.image-placeholder {
+  background: linear-gradient(150deg, var(--color-mist) 0%, #e8e5df 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {

@@ -1,27 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
-import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import MotionProvider from "@/components/MotionProvider";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Premium Vape Shop in Paarl, Western Cape`,
+    default: `${siteConfig.name} Vape Shop | Paarl, Western Cape`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -39,12 +31,12 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | Paarl's Premium Vape Destination`,
+    title: `${siteConfig.name} Vape Shop | Paarl, Western Cape`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Paarl's Premium Vape Destination`,
+    title: `${siteConfig.name} Vape Shop | Paarl, Western Cape`,
     description: siteConfig.description,
   },
   robots: {
@@ -64,8 +56,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#06080a",
-  colorScheme: "dark",
+  themeColor: "#faf9f7",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
 };
@@ -76,7 +68,7 @@ const localBusinessJsonLd = {
   name: siteConfig.business.legalName,
   image: `${siteConfig.url}/opengraph-image`,
   url: siteConfig.url,
-  telephone: undefined,
+  telephone: siteConfig.contact.phone || undefined,
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
@@ -111,11 +103,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${manrope.variable} ${fraunces.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-ink text-platinum">
+    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-paper text-ink">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -124,11 +113,11 @@ export default function RootLayout({
         />
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-ice focus:px-4 focus:py-2 focus:text-ink focus:font-semibold"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-white focus:font-semibold"
         >
           Skip to main content
         </a>
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

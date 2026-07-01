@@ -1,15 +1,25 @@
 export const siteConfig = {
-  name: "Smoke Machine Express",
-  shortName: "Smoke Machine Express",
-  tagline: "Paarl's Premium Vape Destination",
-  subTagline: "A considered space for vaping done properly.",
+  name: "Smoke Machine",
+  shortName: "Smoke Machine",
+  tagline: "Vape Shop",
+  subTagline: "Explore vape devices, e-liquids & accessories — available in-store.",
   description:
-    "Smoke Machine Express is Paarl's premium vape destination at Centrepoint, Western Cape — a considered space carrying Airscream, OXVA and Vaporesso, with expert guidance and unhurried, attentive service. Open daily 09:00-22:00.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.smokemachineexpress.co.za",
+    "Smoke Machine is a local vape shop at Centrepoint, Paarl, Western Cape. Browse devices, e-liquids, pods, coils and accessories from Airscream, OXVA and Vaporesso, then visit us in-store. Open daily 09:00-22:00.",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.smokemachine.co.za",
   locale: "en_ZA",
 
+  // TODO: WhatsApp and phone numbers have not been provided yet.
+  // Fill these in before launch — CTAs fall back to the store location
+  // section until real numbers are set.
+  contact: {
+    whatsapp: "", // digits only, with country code, e.g. "27821234567"
+    whatsappMessage: "Hi! I'd like to ask about a product at Smoke Machine.",
+    phone: "", // e.g. "+27 21 123 4567"
+    instagram: "", // e.g. "https://instagram.com/smokemachine"
+  },
+
   business: {
-    legalName: "Smoke Machine Express",
+    legalName: "Smoke Machine",
     streetAddress: "Centrepoint",
     addressLocality: "Paarl",
     addressRegion: "Western Cape",
@@ -21,6 +31,7 @@ export const siteConfig = {
       closes: "22:00",
       label: "09:00 – 22:00 Daily",
     },
+    parkingNote: "Convenient on-site parking and easy street-level access at Centrepoint.",
     mapsQuery: "Centrepoint, Paarl, Western Cape, South Africa",
   },
 
@@ -31,17 +42,18 @@ export const siteConfig = {
   ],
 
   keywords: [
-    "Smoke Machine Express",
-    "vape shop Paarl",
-    "vape store Paarl",
+    "Smoke Machine",
     "vape shop near me",
+    "vape store Paarl",
+    "vape shop Paarl",
+    "e-liquids Paarl",
     "vape shop Western Cape",
     "Centrepoint Paarl",
     "Vaporesso Paarl",
     "OXVA Paarl",
     "Airscream Paarl",
     "vape accessories Paarl",
-    "premium vape devices Paarl",
+    "vape devices Paarl",
   ],
 } as const;
 

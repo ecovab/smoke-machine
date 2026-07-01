@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { siteConfig } from "@/lib/site-config";
-import { mapsDirectionsUrl } from "@/lib/maps";
+import { whatsappUrl } from "@/lib/contact";
 
 const NAV_LINKS = [
-  { href: "#about", label: "About" },
-  { href: "#craft", label: "Craft" },
-  { href: "#brands", label: "Brands" },
-  { href: "#location", label: "Location" },
+  { href: "#categories", label: "Categories" },
+  { href: "#products", label: "Products" },
+  { href: "#visit", label: "Visit Us" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -17,7 +16,7 @@ export default function Header() {
 
   useEffect(() => {
     function onScroll() {
-      setScrolled(window.scrollY > 24);
+      setScrolled(window.scrollY > 12);
     }
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -26,40 +25,34 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-700 ${
-        scrolled ? "glass-panel border-b border-hairline" : "bg-transparent"
+      className={`sticky top-0 z-50 bg-paper/95 backdrop-blur transition-shadow ${
+        scrolled ? "shadow-[0_1px_0_var(--color-line)]" : ""
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
-        <a
-          href="#top"
-          className="font-display text-sm tracking-[0.3em] text-platinum sm:text-base"
-        >
-          SMOKE MACHINE <span className="italic text-ice">Express</span>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+        <a href="#top" className="text-lg font-semibold tracking-tight text-ink">
+          Smoke Machine
         </a>
 
-        <nav
-          aria-label="Primary"
-          className="hidden items-center gap-9 md:flex"
-        >
+        <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-xs tracking-[0.15em] text-stone transition-colors duration-500 hover:text-ice"
+              className="text-sm text-ink-soft transition-colors hover:text-accent"
             >
-              {link.label.toUpperCase()}
+              {link.label}
             </a>
           ))}
         </nav>
 
         <a
-          href={mapsDirectionsUrl(siteConfig.business.mapsQuery)}
-          target="_blank"
+          href={whatsappUrl()}
+          target={whatsappUrl().startsWith("http") ? "_blank" : undefined}
           rel="noopener noreferrer"
-          className="hidden rounded-sm border border-hairline px-5 py-2 text-xs tracking-[0.15em] text-platinum transition-colors duration-500 hover:border-ice hover:text-ice md:inline-flex"
+          className="hidden rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-dark md:inline-flex"
         >
-          GET DIRECTIONS
+          WhatsApp Us
         </a>
 
         <button
@@ -71,13 +64,18 @@ export default function Header() {
           onClick={() => setMenuOpen((v) => !v)}
         >
           <span
-            className={`h-px w-6 bg-platinum transition-transform ${
-              menuOpen ? "translate-y-[3.5px] rotate-45" : ""
+            className={`h-0.5 w-6 bg-ink transition-transform ${
+              menuOpen ? "translate-y-2 rotate-45" : ""
             }`}
           />
           <span
-            className={`h-px w-6 bg-platinum transition-transform ${
-              menuOpen ? "-translate-y-[3.5px] -rotate-45" : ""
+            className={`h-0.5 w-6 bg-ink transition-opacity ${
+              menuOpen ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`h-0.5 w-6 bg-ink transition-transform ${
+              menuOpen ? "-translate-y-2 -rotate-45" : ""
             }`}
           />
         </button>
@@ -87,28 +85,28 @@ export default function Header() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="glass-panel border-t border-hairline px-5 py-6 md:hidden"
+          className="border-t border-line bg-paper px-5 py-6 md:hidden"
         >
           <ul className="flex flex-col gap-5">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm tracking-[0.1em] text-platinum"
+                  className="text-base text-ink"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {link.label.toUpperCase()}
+                  {link.label}
                 </a>
               </li>
             ))}
             <li>
               <a
-                href={mapsDirectionsUrl(siteConfig.business.mapsQuery)}
-                target="_blank"
+                href={whatsappUrl()}
+                target={whatsappUrl().startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
-                className="inline-flex rounded-sm border border-hairline px-5 py-2 text-xs tracking-[0.15em] text-platinum"
+                className="inline-flex rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white"
               >
-                GET DIRECTIONS
+                WhatsApp Us
               </a>
             </li>
           </ul>
